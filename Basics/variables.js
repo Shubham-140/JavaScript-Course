@@ -7,4 +7,4 @@ myName="Viom";
 console.log(myId);
 console.log(myName);
 
-console.table([myId,myName]);  /* Another way to write in one line */
+console.table([myId,myName]); /* Another way to write in one line */
