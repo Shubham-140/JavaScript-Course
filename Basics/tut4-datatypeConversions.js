@@ -1,0 +1,14 @@
+let age=22;
+console.log(typeof(age));
+
+let stringAsAge="456";
+console.log(stringAsAge+" as "+typeof(stringAsAge));
+
+let stringToNum=Number(stringAsAge);
+console.log(stringToNum+" as "+typeof(stringToNum));
+
+// But sometimes if used Number() typeof will tell number datatype even if it is not a number, thus we have to double check it, thus is prints NaN
+
+// For eg - if "324as",bool, null as object and undefined is converted to number, it will print NaN as number, 0 or 1(depending on true/false), 0 and NaN as number respectively
+
+// Similarly, there can be more converions like String(), Boolean() etc etc
