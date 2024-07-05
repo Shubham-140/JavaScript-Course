@@ -29,4 +29,4 @@ console.log(Math.max(5,3,3,5,6));
 
 console.log(Math.random()); // always gives value between 0 and 1
 console.log((Math.random()*(100-10+1))+10); // now will give value from 10 to 100
-// thus formula is [(Math.random()*(max-min+1))+min]
+// thus formula is [(Math.random()*(max-min+1))+min]  
