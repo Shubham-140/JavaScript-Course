@@ -7,6 +7,6 @@ shoeSize=9;        /* not a good practice */
 myName="Viom";
 
 console.log(myId);
-console.log(myName);
+console.log(myName); 
 
 console.table([myId,myName]); /* Another way to write in one line */
