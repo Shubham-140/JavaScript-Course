@@ -14,4 +14,4 @@ console.log(myDate.toString());
 console.log(myDate.toLocaleString());
 
 console.log(timeStamp); // gives ms from 1st jan 1970
-console.log(Math.floor(timeStamp/1000)); // ms to sec
+console.log(Math.floor(timeStamp/1000)); // ms to sec 
