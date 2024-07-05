@@ -1,6 +1,7 @@
 const firstName="Shubham";
 const lastName=new String("Singh");
 const hobby="    cricket  ";
+const test="Hello there! I hope you are enjoying learning JS";
 
 console.log(firstName+" "+lastName);
 console.log(`My name is ${firstName} ${lastName}`);
@@ -15,3 +16,6 @@ console.log(lastName.substr(2,2));
 console.log(hobby.trim()); // removes leading and trailing whitespaces
 console.log(hobby.trimStart()); // removes leading whitespaces
 console.log(hobby.trimEnd()); // removes trailing whitespaces
+console.log(hobby.replace("    cricket  ","coding"));
+console.log(hobby.includes("ricket"));
+console.log(test.split(' '));
