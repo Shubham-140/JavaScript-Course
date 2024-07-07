@@ -49,7 +49,7 @@ for (const key in game) {
 
 
 
-///////// For Each /////////
+///////// For Each /////////  (never returns a value)
 const languages=['js','cpp','python','java'];
 
 languages.forEach(function (langs){
