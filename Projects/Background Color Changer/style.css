@@ -1,0 +1,56 @@
+.body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    display: flex;
+    color:rgb(32, 2, 2);
+    font-family: sans-serif;
+    margin-top: 100px;
+    white-space: no-wrap;
+    text-decoration: underline;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.color-button{
+    height: 100px;
+    width: 200px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#red{
+    background-color: red;
+    color: whitesmoke;
+}
+#blue{
+    background-color: blue;
+    color: whitesmoke;
+}
+#green{
+    background-color: green;
+    color: whitesmoke;
+}
+#yellow{
+    background-color: yellow;
+}
+#olive{
+    background-color: olive;
+    color: whitesmoke;
+}
+#pink{
+    background-color: pink;
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+}
