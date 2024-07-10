@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            display: flex;
+            color: rgb(32, 2, 2);
+            font-family: sans-serif;
+            margin-top: 100px;
+            white-space: no-wrap;
+            text-decoration: underline;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .color-button {
+            height: 150px;
+            width: 180px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #red {
+            background-color: red;
+            color: whitesmoke;
+        }
+
+        #blue {
+            background-color: blue;
+            color: whitesmoke;
+        }
+
+        #green {
+            background-color: green;
+            color: whitesmoke;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #olive {
+            background-color: olive;
+            color: whitesmoke;
+        }
+
+        #pink {
+            background-color: pink;
+        }
+
+        h3 {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <title>Background Color Changer</title>
+</head>
+
+<body>
+    <h1>Background Color Changer</h1>
+    <div class="buttons">
+        <button class="color-button" id="red"></button>
+        <button class="color-button" id="blue"></button>
+        <button class="color-button" id="green"></button>
+        <button class="color-button" id="yellow"></button>
+        <button class="color-button" id="olive"></button>
+        <button class="color-button" id="pink"></button>
+    </div>
+    <h3>Tap on the button to change the color you want!!</h3>
+</body>
+<script>
+    setTimeout(function(){  // after x ms, the event will occur
+        console.log('setTime called after 1 sec');
+    },1000);
+    // setTimeout(function(){ 
+    //     console.log('setTime called after 0.5 sec');
+    // },500);
+    // setTimeout(() => {
+    //     document.querySelector('h1').innerHTML='its been 5 sec please select bg color';
+    // }, 5000);
+    
+    let id=setInterval(function(){
+        console.log('setInterval called after 1.5 secs')
+    },1500);
+    // setInterval(function(){
+    //     console.log('setInterval called after 2.5 secs')
+    // },2500);
+    // setInterval(() => {
+    //     document.querySelector('h1').innerHTML='its been 5 sec please select bg color';
+    // }, 5000);
+
+    clearTimeout(id);
+</script>
+</html>
