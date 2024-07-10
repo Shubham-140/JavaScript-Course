@@ -1,6 +1,6 @@
 const primaryHeading=document.querySelectorAll('h1');
 const body=document.querySelector('body');
-const buttons=document.querySelectorAll('.color-button');
+const buttons=document.querySelectorAll('.buttons');
 const secondaryHeading=document.querySelectorAll('h3');
 
 buttons.forEach(function(button){
