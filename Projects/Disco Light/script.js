@@ -13,6 +13,7 @@ let startChangingColor;
 
 const start=()=>{
     if(!startChangingColor){
+        document.getElementById('head').innerHTML='Click STOP to stop disco light';
         startChangingColor=setInterval(() => {
             document.body.style.backgroundColor=randomColor();
         }, 50);
@@ -20,6 +21,7 @@ const start=()=>{
 }
 
 const stop=()=>{
+    document.getElementById('head').innerHTML='Click START to start disco light';
     clearInterval(startChangingColor);
     document.body.style.backgroundColor='white';
     startChangingColor=null;
