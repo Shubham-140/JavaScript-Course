@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            background-color: black;
+            color: whitesmoke;
+        }
+        .body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            color: whitesmoke;
+            display: flex;
+            color: rgb(246, 243, 243);
+            font-family: sans-serif;
+            margin-top: 100px;
+            white-space: no-wrap;
+            text-decoration: underline;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .color-button {
+            height: 150px;
+            width: 180px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #red {
+            background-color: red;
+            color: whitesmoke;
+        }
+
+        #blue {
+            background-color: blue;
+            color: whitesmoke;
+        }
+
+        #green {
+            background-color: green;
+            color: whitesmoke;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #olive {
+            background-color: olive;
+            color: whitesmoke;
+        }
+
+        #pink {
+            background-color: pink;
+        }
+
+        h3 {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <title>Background Color Changer</title>
+</head>
+
+<body>
+    <h1>Background Color Changer</h1>
+    <div class="buttons">
+        <button class="color-button" id="red"></button>
+        <button class="color-button" id="blue"></button>
+        <button class="color-button" id="green"></button>
+        <button class="color-button" id="yellow"></button>
+        <button class="color-button" id="olive"></button>
+        <button class="color-button" id="pink"></button>
+    </div>
+    <h3>Tap on the button to change the color you want!!</h3>
+</body>
+
+<script>
+    // An event is something that happens on a webpage, like a button being clicked
+
+    document.querySelector('.buttons').addEventListener('click',function(e){
+        console.log('buttons container clicked');
+        let removeItem=e.target.parentNode;
+        removeItem.remove();
+    },false);
+
+    document.getElementById('red').addEventListener('click',function(e){
+        e.stopPropagation(); // there is a clicked event which is at buttons class and red is an id that is inside class buttons, now if red is clicked then it prints red clicked and then bubbles up and clicks buttons container clicked also, but if we want to call only this element, we use this current function to execute the current one only.
+        const num=console.log('red clicked');
+        alert('red clicked');
+    },false);
+
+    // Also, we can change the default behaviour of event by doing e.preventDefault(); like clicking youtube url but it doesn't open instead it prints not available in console.
+</script>
+</html>
+
+<!-- In order to remove the event using id.removeEventListener('click',funRef)
+     the function reference in removeEventListener should be as same as addEventListener
+
+     By default, the addEventListener has bubbling phase which means if we have added some properties into at-target element, then it will be automatically added to parent element also associated with it (which is the third argument that is called useCapture and it is false by-default)
+
+     We can use event.preventDefault() to avoid the defualt behavior of the element like redirecting to a website etc
+-->

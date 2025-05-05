@@ -1,0 +1,39 @@
+<!-- In Local Storage, the value remains and does not flush after the reload as it is now in the local storage. -->
+
+<!-- Both the keys and values should be string, thus use JSON.stringify() and JSON.parse() for converting object to string and to convert string to object respectively. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+
+
+
+
+
+    let key = prompt("Enter the key");
+    let value = prompt("Enter the value");
+
+    localStorage.setItem(key, value);  // stores the key-value pair or can update the value of the existing key
+
+    console.log(`The value of ${key} is ${value}`);
+
+    localStorage.getItem(key,value); // gets the value by key
+
+    localStorage.removeItem(key); // removes the key-value pair using key
+
+    localStorage.clear(); // removes everything 
+
+    localStorage.length; // tells the number of key-value pairs
+
+
+
+
+
+  </script>
+</html>

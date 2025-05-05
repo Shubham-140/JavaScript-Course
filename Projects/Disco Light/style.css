@@ -1,0 +1,46 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    text-decoration: underline;
+}
+
+#btn1{
+    height: 50px;
+    width: 100px;
+    margin-left: 170px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: medium;
+    background-color: rgb(248, 246, 241);
+    color: rgb(81, 52, 106);
+}
+
+#btn1:hover{
+    background-color: rgb(244, 233, 206);
+    color: rgb(12, 147, 48);
+    font-size: larger;
+}
+
+#btn2{
+    height: 50px;
+    width: 100px;
+    margin-left: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: larger;
+    font-size: medium;
+    background-color: rgb(248, 246, 241);
+    color: rgb(81, 52, 106);
+}
+
+#btn2:hover{
+    background-color: rgb(244, 233, 206);
+    color: rgb(12, 147, 48);
+    font-size: larger;
+}

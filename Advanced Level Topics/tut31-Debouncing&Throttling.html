@@ -1,0 +1,94 @@
+<!-- Debouncing is a programming technique used to limit the rate at which a function is executed.
+
+Eg - In a search box, there is debouncing concept used, i.e., if we search a query it doesn't immediately show us the results rather there will be a time period known as debounce delay. Suppose, after 300 ms, it will show us the resultant query results but not immediately.
+Thus, this will not invoke API calls immediately but at the required moment, which is an optimisation and less resource intensive.
+
+
+
+
+
+Throttling is a technique used to limit the number of times a function is executed over a specified period. Unlike debouncing, which ensures that a function is executed only once after a period of inactivity, throttling ensures that a function is executed at most once during a defined interval, regardless of how often the event is triggered.
+
+Eg - For infinite scrolling, throttling limits the frequency at which the function that checks whether the user has scrolled near the bottom of the page is called. This way, even if the scroll event is triggered multiple times per second, the content loading function will only execute once in a given time period (e.g., every 300ms). -->
+
+
+<!-- Debounce implementation using Lodash CDN library -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>hello</p>
+    <button>Pressed <span id="pressed">0</span> times</button>
+    <button>Triggered <span id="triggered">0</span> times</button>
+</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    
+    
+    var pressFreq=0;
+    var triggFreq=0;
+    
+    var btnPressed=document.querySelector('#pressed');
+    var btnTriggered=document.querySelector('#triggered');
+    
+    const debounceCnt=_.debounce(()=>{
+        btnTriggered.innerHTML=++triggFreq;
+    },300);
+    
+    document.addEventListener('click',()=>{
+        btnPressed.innerHTML=++pressFreq;
+        debounceCnt();
+    })
+    
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- Throttle implementation using Lodash CDN library -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>hello</p>
+    <button>Pressed <span id="pressed">0</span> times</button>
+    <button>Triggered <span id="triggered">0</span> times</button>
+</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    
+    
+    let pressFreq=0;
+    let throttleFreq=0;
+    
+    const btnPressed=document.querySelector('#pressed');
+    const btnTriggered=document.querySelector('#triggered');
+    
+    const throttleCnt = _.throttle(() => {
+        btnTriggered.innerHTML = ++throttleFreq; 
+    }, 200);
+    
+    document.addEventListener('click', () => {
+        btnPressed.innerHTML = ++pressFreq; 
+        throttleCnt(); 
+    });
+    
+</script>
+</html>
