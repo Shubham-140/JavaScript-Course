@@ -1,5 +1,5 @@
 
-/////////////////////// For Of ///////////////////////////
+/////////////////////// For Of /////////////////////////// (can access values not indexes)
 const arr1=[1,2,3,4,4];
 for (const num of arr1) {
     if(num===4){
@@ -13,7 +13,7 @@ for (const num of arr1) {
 
 
 
-///////  For Of  /////// (can access values not indexes)
+///////  For Of  ///////
 const countryToCode=new Map();
 countryToCode.set('India',"+91");
 countryToCode.set("USA","+1");

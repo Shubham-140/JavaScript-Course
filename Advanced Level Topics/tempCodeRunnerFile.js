@@ -1,1 +1,0 @@
-const dieselPrice=new Number(105.3245);
