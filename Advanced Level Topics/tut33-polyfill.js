@@ -7,9 +7,9 @@ const arr=[1,2,3,4,5];
 
 // 1. ForEach Loop Polyfill
 
-Array.prototype.myForEach=function(){
+Array.prototype.myForEach=function(callback){
     for(let i=0;i<this.length;i++){
-        console.log(this[i]);
+        callback(this[i], i, this)
     }
 }
 

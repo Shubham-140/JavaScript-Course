@@ -1,7 +1,11 @@
-const productPrices=[100, 126, 356, 3687];
+const arr=[1, 2, 3, 4, 5];
 
-const prices=productPrices.reduce((elem, acc)=>{
-    return acc+elem;
-}, acc=-100)
+Array.prototype.myForEach=function(callback){
+    for(let i=0;i<this.length;i++){
+        callback(this[i], i, this)
+    }
+}
 
-console.log(prices);
+arr.myForEach((elem, index, arr)=>{
+    console.log(arr);
+})
