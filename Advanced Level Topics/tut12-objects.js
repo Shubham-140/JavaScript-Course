@@ -36,12 +36,17 @@ console.log(employee.naam);
 employee.greet=function(){
     console.log("Hello employee");
 }
+<<<<<<< HEAD
 employee.greetAgain=function(naam){
+=======
+employee.greetAgain=function(){
+>>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd
     console.log(`Hello ${this.naam}`);
 }
 
 console.log(employee.greet); // function reference returned but not executed
 console.log(employee.greet());
+<<<<<<< HEAD
 console.log(employee.greetAgain());
 
 
@@ -102,3 +107,6 @@ const employeee={
 const employeeeClone=structuredClone(employeee);
 employeee.name="Shibbu";
 console.log(employeeeClone);
+=======
+console.log(employee.greetAgain());
+>>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd

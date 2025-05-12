@@ -12,6 +12,7 @@ const getUserData=()=>({naam:"Shubham"});
 console.log(addNums(6,3));
 console.log(getProd(6,3));
 console.log(subNums(6,3));
+<<<<<<< HEAD
 console.log(getUserData);
 
 
@@ -27,3 +28,6 @@ console.log(getUserData);
 // | Hoisting                       | Not hoisted                                  | Hoisted                                      |
 // | Named vs Anonymous             | Always anonymous                             | Can be named or anonymous                    |
 // | Performance                    | Faster due to no `this` rebinding            | Slightly slower due to dynamic binding       |
+=======
+console.log(getUserData);
+>>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd

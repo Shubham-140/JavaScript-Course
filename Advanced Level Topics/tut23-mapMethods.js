@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 // Map method is used to get a new array by applying a provided function on each element of array.
 // It returns a new array rather than modifying the original array.
 
+=======
+>>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd
 // const nums1=[1,2,4,5,6];
 
 // const newNums1=nums1.map((val)=>{

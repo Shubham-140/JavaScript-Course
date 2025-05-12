@@ -12,4 +12,8 @@
 
 (function greetAgain(){
     console.log("Good Morning");
+<<<<<<< HEAD
 })();
+=======
+})()
+>>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd

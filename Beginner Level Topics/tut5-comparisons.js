@@ -1,6 +1,7 @@
 console.log("2">1);
 console.log("2">2);
 console.log("2">=2);
+<<<<<<< HEAD
 console.log("2"==2);
 console.log("2">3);
 
@@ -28,3 +29,15 @@ console.log(null===undefined);
 
 
 // Coercion is the process of converting a value from one datatype to another in order to compare two different datatypes.
+=======
+console.log("2">3);
+
+console.log(null>0);
+console.log(null==0);
+console.log(null===0); // it checks value along with datatype also
+console.log(null>=0);
+
+console.log(null>undefined);
+console.log(null>=undefined);
+console.log(null==undefined);
+>>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd

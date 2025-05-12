@@ -32,9 +32,17 @@ const yellowCol=document.getElementById('yellow');
 // Similarly,there is a method for accessing element through class
 const button=document.getElementsByClassName('buttons');
 
+<<<<<<< HEAD
 // There is one more way to do it
 yellowCol=document.querySelector('yellow');
 
+=======
+
+// There is one more way to do it
+yellowCol=document.querySelector('yellow');
+
+
+>>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd
 // If there are many elements inside a element container, we can use 
 const nothing=document.querySelectorAll('imaginary');
 // Now, if we want to access the data inside,we can use forEach loop or if only one element, then use indices.

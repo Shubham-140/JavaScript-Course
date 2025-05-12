@@ -20,7 +20,11 @@ console.log(arr3); // takes whole array as element
 
 
 const arr4=arr3.concat(arr2);
+<<<<<<< HEAD
 console.log(arr4); // pushes each element of arr2 into arr3 into a new array
+=======
+console.log(arr4); // pushes each element of arr1 into arr2 into a new array
+>>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd
 
 
 
@@ -40,7 +44,11 @@ console.log(marks.sort());
 marks.pop();
 console.log(marks.includes(67));
 console.log(marks.indexOf(67));
+<<<<<<< HEAD
 console.log(marks.join()); // converts array to string or we can use json.stringify
+=======
+console.log(marks.join()); // converts array to string
+>>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd
 console.log(typeof marks);
 console.log(typeof(marks.join()));
 console.log(marks.slice(1,3));
@@ -63,4 +71,8 @@ console.log(nestedArray.flat(Infinity));
 const notArray="Shubham";
 console.log(notArray);
 console.log(Array.isArray(notArray));
+<<<<<<< HEAD
 console.log(Array.from(notArray)); // converted to array
+=======
+console.log(Array.from(notArray)); // converted to array
+>>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd

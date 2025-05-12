@@ -16,7 +16,11 @@ const start=()=>{
         document.getElementById('head').innerHTML='Click STOP to stop disco light';
         startChangingColor=setInterval(() => {
             document.body.style.backgroundColor=randomColor();
+<<<<<<< HEAD
         }, 150);
+=======
+        }, 50);
+>>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd
     }
 }
 
