@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Practice</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    "
+  >
+    <h1 style="color: #333; text-align: center">DOM Manipulation Practice</h1>
+
+    <div
+      id="container"
+      style="
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <!-- Button Section -->
+      <div style="margin-bottom: 20px">
+        <button
+          id="change-text-btn"
+          style="
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          "
+        >
+          Change Text
+        </button>
+        <button
+          id="toggle-color-btn"
+          style="
+            padding: 8px 16px;
+            background-color: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+          "
+        >
+          Toggle Color
+        </button>
+      </div>
+
+      <!-- Text Element to Manipulate -->
+      <p id="target-text" style="font-size: 18px; color: #333">
+        This text will change when you click the button above.
+      </p>
+
+      <!-- List to Modify -->
+      <ul id="item-list" style="list-style-type: none; padding: 0">
+        <li
+          class="list-item"
+          style="padding: 8px; background-color: #f9f9f9; margin-bottom: 5px"
+        >
+          Item 1
+        </li>
+        <li
+          class="list-item"
+          style="padding: 8px; background-color: #f9f9f9; margin-bottom: 5px"
+        >
+          Item 2
+        </li>
+        <li
+          class="list-item"
+          style="padding: 8px; background-color: #f9f9f9; margin-bottom: 5px"
+        >
+          Item 3
+        </li>
+      </ul>
+
+      <!-- Form Input -->
+      <div style="margin-top: 20px">
+        <input
+          type="text"
+          id="new-item-input"
+          placeholder="Add new item"
+          style="
+            padding: 8px;
+            width: 70%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+          "
+        />
+        <button
+          id="add-item-btn"
+          style="
+            padding: 8px 16px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+          "
+        >
+          Add Item
+        </button>
+      </div>
+
+      <!-- Empty Div for Dynamic Content -->
+      <div
+        id="dynamic-content"
+        style="
+          margin-top: 20px;
+          min-height: 50px;
+          border: 1px dashed #ccc;
+          padding: 10px;
+        "
+      >
+        <!-- Content will be added here via JavaScript -->
+      </div>
+    </div>
+
+    <script>
+      const changeTextBtnId = document.getElementById("change-text-btn");
+      const toggleColorBtnId = document.getElementById("toggle-color-btn");
+      const infoText = document.getElementById("target-text");
+      let blackColor = true;
+      const itemList = document.getElementById("item-list");
+      const addItemBtnId = document.getElementById("add-item-btn");
+      const dynamicContentInput = document.getElementById("dynamic-content");
+      const containerId = document.getElementById("container");
+      const inputId = document.getElementById("new-item-input");
+
+      addItemBtnId.addEventListener("click", function () {
+        const newText = inputId.value.trim();
+        if (newText === "") {
+          return;
+        }
+
+        const li = document.createElement("li");
+        li.textContent = newText;
+        li.className = "list-item";
+        li.style =
+          "padding: 8px; background-color: #f9f9f9; margin-bottom: 5px";
+
+        itemList.appendChild(li);
+        inputId.value = "";
+
+        dynamicContentInput.textContent =
+          "New Item has been added successfully!";
+        setTimeout(() => {
+          dynamicContentInput.textContent = "";
+        }, 1000);
+      });
+
+      changeTextBtnId.addEventListener("click", () => {
+        infoText.textContent = "The text has been updated!";
+        setTimeout(() => {
+          infoText.textContent =
+            "This text will change when you click the button above";
+        }, 1000);
+      });
+
+      toggleColorBtnId.addEventListener("click", function () {
+        if (blackColor) {
+          infoText.style.color = "red";
+          blackColor = !blackColor;
+        } else {
+          infoText.style.color = "black";
+          blackColor = !blackColor;
+        }
+      });
+    </script>
+  </body>
+</html>
