@@ -7,7 +7,7 @@ Thus, this will not invoke API calls immediately but at the required moment, whi
 
 
 
-Throttling is a technique used to limit the number of times a function is executed over a specified period. Unlike debouncing, which ensures that a function is executed only once after a period of inactivity, throttling ensures that a function is executed at most once during a defined interval, regardless of how often the event is triggered.
+Throttling is a technique ensures that a function is executed at most once every X milliseconds…. Unlike debouncing, which ensures that a function is executed only once after a period of inactivity, throttling ensures that a function is executed at most once during a defined interval, regardless of how often the event is triggered.
 
 Eg - For infinite scrolling, throttling limits the frequency at which the function that checks whether the user has scrolled near the bottom of the page is called. This way, even if the scroll event is triggered multiple times per second, the content loading function will only execute once in a given time period (e.g., every 300ms). -->
 

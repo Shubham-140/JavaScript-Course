@@ -1,5 +1,5 @@
 // JSON stands for JavaScript Object Notation.
-// It is used to convert objects and array to string and vice versa.
+// It is mainly used to convert objects and array to string and vice versa.
 
 const emp={
     name:"Shubham",

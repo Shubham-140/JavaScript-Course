@@ -39,7 +39,7 @@ console.log(this);
 
 
 // 'this' keyword in arrow functions
-// this keyword typically refers to module.exports, so mostly we would get {} but not everytime like below eg 
+// this keyword typically refers to surrounding scope, so mostly we would get {} (from module.exports) but not everytime like below eg 
 
 // const employee={
 //     name:"Shubham",
@@ -54,6 +54,15 @@ console.log(this);
 
 // employee.getAge();
 
-// here, arrow functions this to current object which is employee 
+// here, arrow functions 'this' is poiniting to current object which is employee
 // thus, we can say that the this of regular function acts as a bridge
 // i.e.,   this (arrow) ---> this (regular) ---> object  =======> so technically,   this(arrow) ---> object
+
+
+// Below is the differences of 'this' for regular and arrow function are given below
+
+// | Parameter                 | Regular Function                      | Arrow Function                           |
+// |---------------------------|---------------------------------------|------------------------------------------|
+// | How `this` is defined     | Dynamically (based on caller)         | Lexically (from surrounding scope)       |
+// | Own `this`                | Yes                                   | No                                       |
+// | In object methods         | Refers to the object                  | Usually undefined or global/module scope |

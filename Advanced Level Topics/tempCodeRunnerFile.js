@@ -1,13 +1,3 @@
+onsole.log(age); // will print undefined beacuse it carries only the declaration not the value initialization
 
-const employee={
-    name:"Shubham",
-    age:23, 
-    displayAgeFn(){
-        const displayAge=()=>{
-            return (this.age);
-        }
-        displayAge();
-    }
-}
-
-console.log(employee.display
+// var age=22

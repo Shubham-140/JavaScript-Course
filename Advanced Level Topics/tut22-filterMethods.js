@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 // Filter Methods to filter values in array based on desired condition.
 // It returns a new array rather than modifying the original array.
-=======
-// Filter Methods to filter values in data
->>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd
 
 const nums=[2,5,3,6,8];
 

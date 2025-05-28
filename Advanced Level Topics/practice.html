@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Button is pressed <span id="cnt">0</span> times</h2>
+    <button id="btn">Increment count</button>
+  </body>
+  <script>
+    const btn = document.querySelector("#btn");
+    const cnt = document.getElementById("cnt");
+
+    let buttonPressedCnt = 0;
+    let TimeOutId;
+    let throttleDelay = 15000;
+    let lastExecutedTime = Date.now();
+
+    const handleClick = () => {
+      const now = Date.now();
+
+      if (now - lastExecutedTime >= throttleDelay) {
+        buttonPressedCnt++;
+        cnt.textContent = buttonPressedCnt;
+        lastExecutedTime = now;
+      }
+
+      clearTimeout(TimeOutId);
+      TimeOutId = setTimeout(() => {
+        cnt.textContent = buttonPressedCnt;
+      }, 2000);
+    };
+
+    btn.addEventListener("click", handleClick);
+  </script>
+</html>
