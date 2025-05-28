@@ -25,6 +25,7 @@ employee.naam="Viom";
 console.log(employee.naam);
 
 // Object.freeze(employee); // now its key values can't be changed
+
 employee.naam="Shubham";
 console.log(employee.naam);
 
@@ -36,17 +37,12 @@ console.log(employee.naam);
 employee.greet=function(){
     console.log("Hello employee");
 }
-<<<<<<< HEAD
-employee.greetAgain=function(naam){
-=======
 employee.greetAgain=function(){
->>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd
     console.log(`Hello ${this.naam}`);
 }
 
 console.log(employee.greet); // function reference returned but not executed
 console.log(employee.greet());
-<<<<<<< HEAD
 console.log(employee.greetAgain());
 
 
@@ -104,9 +100,8 @@ const employeee={
     }
 }
 
+// Method 3 - Using structured clone
+
 const employeeeClone=structuredClone(employeee);
 employeee.name="Shibbu";
 console.log(employeeeClone);
-=======
-console.log(employee.greetAgain());
->>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd

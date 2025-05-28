@@ -1,10 +1,6 @@
 const coder={
     naam:"KillerCoder",
-<<<<<<< HEAD
     "problems solved":600,
-=======
-    "problems solved":450,
->>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd
     platform:["leetcode","interviewBit","GFG"],
     "interviews given":23,
     company:"can't disclose",
@@ -18,15 +14,46 @@ const coder={
 
 coder.greet();
 coder.naam="crazyCoder";
-<<<<<<< HEAD
 console.log(coder.naam);
 console.log(this);
-=======
-console.log(coder.name);
-console.log(this);
 
 
 
 
 
->>>>>>> 1b5926f56fde4d0a13f71b9fcfb3ef3b1518bccd
+// 'this' keyword in browser vs node environment
+
+// In the browser (global scope), this behaves as window object, whereas in Node environment, this refers to empty object if it doesn't has a parent 
+// console.log(this) refers to {} in node environment
+// because in node environment, js file is wrapped inside the function (IIFE) below 
+
+// (function(exports, require, module, __filename, __dirname) {
+
+//      Your code here (the original js code we write in node compiler)
+
+// })();
+// now, 'this' refers to module.exports which refers to '{}' initially.
+
+
+
+
+
+// 'this' keyword in arrow functions
+// this keyword typically refers to module.exports, so mostly we would get {} but not everytime like below eg 
+
+// const employee={
+//     name:"Shubham",
+//     age:23, 
+//     getAge: function(){
+//         const displayAge=()=>{
+//             console.log(this.name);
+//         }
+//         displayAge();
+//     }
+// }
+
+// employee.getAge();
+
+// here, arrow functions this to current object which is employee 
+// thus, we can say that the this of regular function acts as a bridge
+// i.e.,   this (arrow) ---> this (regular) ---> object  =======> so technically,   this(arrow) ---> object
