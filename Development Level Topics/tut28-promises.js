@@ -105,3 +105,14 @@ async function consumePromise4() {
 }
 
 consumePromise4();
+
+
+
+
+
+
+//  Promises have 3 states
+
+// 1. Pending – Initial state; neither fulfilled nor rejected.
+// 2. Fulfilled – The operation completed successfully.
+// 3. Rejected – The operation failed.
