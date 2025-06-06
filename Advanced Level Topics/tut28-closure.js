@@ -21,6 +21,7 @@ ans();
 // Therefore, when ans() is called, it still has access to 'name', even though outer() has already finished executing.
 // That's why calling ans() successfully prints "Shubham".
 
+// Scope chaining is the process JavaScript uses to look up variables: if a variable is not found in the current scope, it checks the outer (parent) scopes one by one until it either finds the variable or reaches the global scope.
 
 // Scope chain is the order in which JavaScript looks up variables, like first local, then its outer scope and then the global scope
 
