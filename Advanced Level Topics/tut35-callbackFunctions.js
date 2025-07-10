@@ -5,7 +5,8 @@ function printSum(num){
 }
 
 function getSum(a, b, callback){
-    callback(a+b);
+    const sum=a+b;
+    callback(sum);
 }
 
 getSum(3, 5, printSum);
