@@ -61,3 +61,6 @@ printMyName();
 
 
 // call and apply method will be invoked immediately whereas bind method can be invoked later
+
+
+// We use these 3 methods in order to prevent the loss of 'this' context.

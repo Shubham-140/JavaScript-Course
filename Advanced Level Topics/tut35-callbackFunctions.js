@@ -1,4 +1,4 @@
-// Callback functions are the functions which are passed as argument in other function and runs later
+// Callback functions are the functions which are passed as argument in other function and they gets executed when needed
 
 function printSum(num){
     console.log(num);
