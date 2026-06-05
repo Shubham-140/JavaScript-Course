@@ -27,8 +27,7 @@ console.log(sum(56,22));
 
 // Non Primitive (Reference)
 
-// 1 types --> Objects (arrays are objects under the hood and functions are callable objects under the hood)
-// the reason that "typeof ref" (where ref is a function reference) gives function because of convinience expection. Eich wanted to distinguish functions from objects easily, so its there.
+// 2 types --> Arrays, objects, (functions)
 
 let naam=["rajender","usha","viom","shubham"];
 let names1=naam;
