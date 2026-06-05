@@ -7,7 +7,11 @@ console.log("2">3);
 console.log('\n\n\n\n\n\n\n\n\n');
 
 console.log(null>0);   // false, null coerced to 0
-console.log(null==0);  // false, null coerced to undefined
+
+console.log(null == 0);  
+// false — null only equals null or undefined in ==, no coercion happens.
+// Same for undefined — it also refuses to coerce in ==, only equals null or undefined.
+
 console.log(null===0); // false
 console.log(null>=0);  // true, as it is now calculated as null>0 and null==0 in which any one becomes true, it is true
 console.log(null<0);   // false
