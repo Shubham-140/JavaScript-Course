@@ -22,7 +22,7 @@ console.log(getUserData());
 // | Syntax                         | Concise: `const func = (param) => {}`        | Traditional: `function func(param) {}`       |
 // | `this` Binding                 | Lexical `this` (inherits from context)       | Dynamic `this` (based on caller)             |
 // | Constructors (`new`)           | Cannot be used as constructor                | Can be used as constructor                   |
-// | Implicit Return                | Single expression implicitly returned        | Must explicitly return values                |
+// | Return Behavior                | Supports both implicit and explicit return   | Supports only explicit return                |
 // | Hoisting                       | Not hoisted                                  | Hoisted                                      |
-// | Named vs Anonymous             | Can be names or anonymous                    | Can be named or anonymous                    |
+// | Named vs Anonymous             | Can be named or anonymous                    | Can be named or anonymous                    |
 // | Performance                    | Faster due to no `this` rebinding            | Slightly slower due to dynamic binding       |

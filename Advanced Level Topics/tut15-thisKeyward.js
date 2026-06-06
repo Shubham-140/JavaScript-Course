@@ -19,6 +19,8 @@ console.log(this);
 
 
 
+// 'This' refers to the object that is currently calling the function. It changes depending on where and how its used.
+
 
 
 // 'this' keyword in browser vs node environment
@@ -39,7 +41,7 @@ console.log(this);
 
 
 // 'this' keyword in arrow functions
-// this keyword typically refers to surrounding scope, so mostly we would get {} (from module.exports) but not everytime like below eg 
+// this keyword typically refers to surrounding scope, so mostly we would get {} (from module.exports) if there's no regular function as parent but not its not the case everytime like below eg 
 
 // const employee={
 //     name:"Shubham",
@@ -54,7 +56,7 @@ console.log(this);
 
 // employee.getAge();
 
-// here, arrow functions 'this' is poiniting to current object which is employee
+// here, arrow function doesn't have its own this — it inherits this from the nearest regular function scope, which here is getAge, and getAge's this is employee
 // thus, we can say that the this of regular function acts as a bridge
 // i.e.,   this (arrow) ---> this (regular) ---> object  =======> so technically,   this(arrow) ---> object
 
@@ -65,4 +67,4 @@ console.log(this);
 // |---------------------------|---------------------------------------|------------------------------------------|
 // | How `this` is defined     | Dynamically (based on caller)         | Lexically (from surrounding scope)       |
 // | Own `this`                | Yes                                   | No                                       |
-// | In object methods         | Refers to the object                  | Usually undefined or global/module scope |
+// | In object methods         | Refers to the object                  | Inherits from surrounding scope          |

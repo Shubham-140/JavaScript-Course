@@ -74,7 +74,7 @@ console.log(myAge);
 
 
 // Create deep-copy/Clone of non-nested object
-
+// Method 1 - using assign()
 const emp={
     name:"Shubham",
     age:22,
@@ -84,13 +84,28 @@ const empClone=Object.assign({},user); // works only for non nested objects
 emp.name="Shibbu";
 console.log(empClone);
 
+// Method 2 - using destructure
+const secemp={
+    name:"Singh",
+    age:23,
+    address:{
+        galaxy:"milky way",
+        planet:"earth"
+    }
+}
+
+const emp1={...secemp};
+secemp.address.planet="mars";
+console.log(emp1);
+console.log(secemp);
+
 
 
 // Clone nested objects 
 // Method 1 - Using JSON.stringify() and JSON.parse()
 
-// Method 2 - Using destructuring
 
+// Method 2 - Using structured clone
 const employeee={
     name:"Shubham",
     age:22,
@@ -99,8 +114,6 @@ const employeee={
         state:"Delhi"
     }
 }
-
-// Method 3 - Using structured clone
 
 const employeeeClone=structuredClone(employeee);
 employeee.name="Shibbu";
