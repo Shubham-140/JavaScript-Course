@@ -33,8 +33,7 @@ console.log("The time of execution for above function is "+ (t4-t3) + '\n\n\n\n\
 
 
 // Reflow is the process where the browser calculates the positions and sizes of elements after changes to the DOM.
-// It is a high computational task, thus, it reuqires more resources.
-
+// It is a high computational task, thus, it requires more resources.
 
 
 

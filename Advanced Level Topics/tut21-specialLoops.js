@@ -23,13 +23,15 @@ for (const [key,value] of countryToCode) {
     console.log(key,`->`,value);
 }
 
+// For of loop can't be used with objects like using key pair above with map
+// since objects are not iteraable by default, they dont have Symbol.iterator
 
 
 
 
 
 
-////////  For In  ////////// (Used for objects mainly)
+////////  For In  ////////// (Used for objects mainly and works with arrays too)
 const game={
     game1:"GOW",
     game2:"COD",
@@ -60,13 +62,14 @@ languages.forEach((langs)=>{
     console.log(langs);
 })
 
-// Can access not only values but index,whole array too
+// Can access not only values but index, and whole array too
 languages.forEach((langs,index,languages)=>{
     console.log(`the ${langs} is at ${index} for the given 
       [[${languages}]]  array`)
 })
 
-
+// also, forEach can't be stopped — no break or continue!
+// if you need break/continue, use for...of instead
 
 
 
@@ -83,7 +86,7 @@ const games=[
     },
     {
         naam:'COD Black OPS',
-        filseSize:45,
+        fileSize:45,
     },
     {
         naam:'EA Cricket 07',

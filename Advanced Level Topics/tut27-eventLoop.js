@@ -7,8 +7,40 @@ setTimeout(function(){
 console.log("End");
 
 
-// JavaScript is a single threaded language thus, it can also perform async execution of code and maintain the concurrency/performance with the help of event loop.
+// JavaScript is a single threaded language and still, it can also perform async execution of code and maintain the concurrency/performance with the help of event loop.
 
-// WORKING
-// So basically, the start command will directly go into the call stack and gets executed and prints "start" and then timeout function goes into the call stack and since, it is a async function it will be sent to the browser and browser will count the time of completion, meanwhile the "end" statement will be executed and printed and when the t secs passed then this async function is sent to callback queue, then an event loop will run which checks whether call stack is empty or not, if it is not, then it has to wait inside callback queue, and if empty, then it will get executed.
-// Thus, if the timeout is only of 5 secs, it can take more than 5 secs because there is a possibility that call stack is still not empty.
+// WORKING:
+// "start" goes into call stack, gets executed and printed.
+// setTimeout is an async function, thus first, it is sent to call stack
+// there, call stack recognizes it as a Web API
+// so it is sent to the browser which counts the time,
+// meanwhile "end" gets executed and printed.
+// Once the timer completes, the callback is sent to the Callback Queue (Macrotask Queue).
+// The Event Loop checks if the call stack is empty — if not, callback waits in the queue.
+// If empty, the callback gets pushed to call stack and executed.
+// Thus, even a 5sec timeout can take more than 5secs if call stack is still busy.
+
+
+
+
+
+
+// Callback Queue (Macrotask Queue):
+// - setTimeout, setInterval, DOM events
+// - lower priority
+
+// Microtask Queue:
+// - Promises, async/await, queueMicrotask
+// - higher priority — always runs before callback queue!
+
+
+
+
+
+
+// even with 0ms delay, it still goes through the whole
+// callback queue process — never truly immediate
+
+// setTimeout(() => console.log("hello"), 0)
+
+// minimum delay is ~4ms in browsers by spec

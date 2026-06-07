@@ -4,7 +4,7 @@ const nums=[1,2,3];
 
 const sum=nums.reduce((acc,curr)=>{
     return acc+curr;
-},acc=0);
+},0);
 
 console.log(sum);
 
@@ -21,6 +21,6 @@ const shoppingList = [
 
 const totalPrice=shoppingList.reduce((acc,product)=>{
     return acc+product.price;
-},acc=-60);
+},-60); // discount is 60 (initial value of accumulator)
 
 console.log(totalPrice);

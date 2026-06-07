@@ -1,13 +1,13 @@
 // The map() method creates a new array by transforming each element of the original array using a given function
 // It returns a new array rather than modifying the original array.
 
-// const nums1=[1,2,4,5,6];
+const nums1=[1,2,4,5,6];
 
-// const newNums1=nums1.map((val)=>{
-//     return val+10;
-// })
+const newNums1=nums1.map((val)=>{
+    return val+10;
+})
 
-// console.log(newNums1);
+console.log(newNums1);
 
 
 
@@ -25,3 +25,7 @@ const newNums2=nums2.map((val1)=>{
 }) 
 
 console.log(newNums2);
+
+
+// If we use a condition instead of returning a tranformed value, we get true/false instead. 
+// Map always returns new array of length equal to original array length.
