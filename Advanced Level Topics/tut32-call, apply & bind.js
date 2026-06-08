@@ -43,7 +43,7 @@ let user4={
     lastName:"Mahajan"
 }
 
-printNaam.apply(user2,['Delhi','India','Earth']);
+printNaam.apply(user4,['Delhi','India','Earth']);
 
 
 
@@ -60,7 +60,16 @@ let printMyName=printName.bind(user1,'Noida');
 printMyName();
 
 
-// call and apply method will be invoked immediately whereas bind method can be invoked later
 
+
+// Summary of differences:
+// call()  → invokes immediately, arguments passed individually
+// apply() → invokes immediately, arguments passed as array
+// bind()  → returns NEW function, invokes later, arguments passed individually
+
+
+
+
+// Arrow functions are useless with call, apply or bind methods and we get undefined.
 
 // We use these 3 methods in order to prevent the loss of 'this' context.

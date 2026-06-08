@@ -1,5 +1,5 @@
 // Polyfills are our own implementation of an inbuilt function in JS.
-
+// They are usually used in case a compiler or browser is not modern or upto data.
 // Prototype allows objects to inherit properties and methods from other objects.
 
 const arr = [1, 2, 3, 4, 5];
@@ -76,6 +76,8 @@ let res = arr.myReduce((acc, elem) => {
     return acc + elem
 });
 
+console.log(res);
+
 
 // 5. Flat Method
 
@@ -128,7 +130,7 @@ let obj2 = {
 
 // Method 2 - Using JSON.stringify
 
-if (JSON.stringify(obj1) == JSON.stringify(obj2)) {
+if (JSON.stringify(obj1) === JSON.stringify(obj2)) {
     console.log('Yes, they are equal!');
 }
 

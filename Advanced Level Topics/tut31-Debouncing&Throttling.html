@@ -1,7 +1,7 @@
 <!-- Debouncing is a programming technique used to limit the rate at which a function is executed.
 
 Eg - In a search box, there is debouncing concept used, i.e., if we search a query it doesn't immediately show us the results rather there will be a time period known as debounce delay. Suppose, after 300 ms, it will show us the resultant query results but not immediately.
-Thus, this will not invoke API calls immediately but at the required moment, which is an optimisation and less resource intensive.
+Thus, this will not invoke API calls immediately but at the required moment, which is an efficient and less resource intensive.
 
 
 
@@ -92,3 +92,114 @@ Eg - For infinite scrolling, throttling limits the frequency at which the functi
     
 </script>
 </html>
+
+
+
+
+
+
+<!-- Key difference:
+Debouncing  — resets timer on every trigger, executes AFTER inactivity
+Throttling  — executes immediately, then ignores triggers for X ms
+
+Debounce use cases  — search box, form validation, resize events
+Throttle use cases  — infinite scroll, button spam prevention, mousemove events -->
+
+
+
+
+
+<!-- Given is the manual implementation of both Debouncing and Throttling
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>hello</p>
+    <button>Pressed <span id="pressed">0</span> times</button>
+    <button>Triggered <span id="triggered">0</span> times</button>
+</body>
+<script>
+    let pressFreq=0;
+    let triggFreq=0;
+    let debounceTimer;
+    
+    const btnPressed=document.querySelector('#pressed');
+    const btnTriggered=document.querySelector('#triggered');
+    
+    const debounceCnt=()=>{
+        clearTimeout(debounceTimer);
+        
+        debounceTimer=setTimeout(()=>{
+            btnTriggered.innerHTML=++triggFreq;
+        }, 500)
+    }
+    
+    document.addEventListener('click',()=>{
+        btnPressed.innerHTML=++pressFreq;
+        debounceCnt();
+    })
+    
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>hello</p>
+    <button>Pressed <span id="pressed">0</span> times</button>
+    <button>Triggered <span id="triggered">0</span> times</button>
+</body>
+
+<script>
+
+    let pressFreq=0;
+    let triggFreq=0;
+    const throttleTimer=1000;
+    let lastExecuted=null;
+    
+    const btnPressed=document.querySelector('#pressed');
+    const btnTriggered=document.querySelector('#triggered');
+    
+    const throttleCnt=()=>{
+        const currentTime=Date.now();
+        
+        if(lastExecuted && currentTime-lastExecuted<throttleTimer){
+            return;
+        }
+        
+        btnTriggered.innerHTML=++triggFreq;
+        lastExecuted=Date.now();
+    }
+    
+    document.addEventListener('click',()=>{
+        btnPressed.innerHTML=++pressFreq;
+        throttleCnt();
+    })
+    
+</script>
+</html> -->

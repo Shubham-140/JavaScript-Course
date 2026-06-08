@@ -23,7 +23,7 @@
 
     console.log(`The value of ${key} is ${value}`);
 
-    localStorage.getItem(key,value); // gets the value by key
+    localStorage.getItem(key); // gets the value by key
 
     localStorage.removeItem(key); // removes the key-value pair using key
 
@@ -37,3 +37,9 @@
 
   </script>
 </html>
+
+<!-- 
+1. Local Storage returns null if key doesn't exist on using getItem()
+2. Local Storage has a storage limit of ~5MB per domain 
+3. Session Storage is similar but flushes after tab/browser is closed
+-->
