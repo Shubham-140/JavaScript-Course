@@ -18,7 +18,7 @@ console.log(add(1)(3)(44));
 
 function multiply(a){
     return function(b){
-        if(b){
+        if(b!==undefined){
             return multiply(a*b);
         }
         else{
@@ -41,4 +41,18 @@ console.log(multiply(4)(8)(3)(34)());
 // Difference bw currying and partial application
 // Currying has the no. of functions which is equal to the no. of arguments passed whereas it is not true in partial application.
 
+
+
 // Partial application transforms a function into another function with small arity(number of parameters a function takes).
+
+function calculatePrice(taxRate, price){
+    return price + (price * taxRate / 100);
+}
+
+// with partial application — fix taxRate as 18 once
+const indianTax = calculatePrice.bind(null, 18)
+
+// now just pass price! why to pass 18 as args if its fixed.
+indianTax(100)
+indianTax(500)
+indianTax(230)
