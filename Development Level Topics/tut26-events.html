@@ -5,22 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        *{
+        * {
             background-color: black;
             color: whitesmoke;
         }
+
         .body {
             margin: 0;
             padding: 0;
         }
-        
+
         h1 {
             color: whitesmoke;
             display: flex;
             color: rgb(246, 243, 243);
             font-family: sans-serif;
             margin-top: 100px;
-            white-space: no-wrap;
+            white-space: nowrap;
             text-decoration: underline;
             margin-bottom: 40px;
             justify-content: center;
@@ -91,20 +92,29 @@
 <script>
     // An event is something that happens on a webpage, like a button being clicked
 
-    document.querySelector('.buttons').addEventListener('click',function(e){
+    document.querySelector('.buttons').addEventListener('click', function (e) {
         console.log('buttons container clicked');
-        let removeItem=e.target.parentNode;
+        let removeItem = e.target.parentNode;
         removeItem.remove();
-    },false);
+    }, false);
 
-    document.getElementById('red').addEventListener('click',function(e){
-        e.stopPropagation(); // there is a clicked event which is at buttons class and red is an id that is inside class buttons, now if red is clicked then it prints red clicked and then bubbles up and clicks buttons container clicked also, but if we want to call only this element, we use this current function to execute the current one only.
-        const num=console.log('red clicked');
+    document.getElementById('red').addEventListener('click', function (e) {
+        e.stopPropagation();
+        // Event Bubbling — when an element is clicked, the event bubbles UP to parent elements
+        // red button clicked → bubbles up → buttons container click also fires!
+        // stopPropagation() stops this bubbling
+
+        // Event Capturing (useCapture=true)  — fires from parent DOWN to child (top to bottom)
+        // Event Bubbling  (useCapture=false) — fires from child UP to parent (bottom to top) — default
+
+        // document.getElementById('red').addEventListener('click', fn, true)  // capturing phase
+        // document.getElementById('red').addEventListener('click', fn, false) // bubbling phase (default)
+
+        console.log('red clicked');
         alert('red clicked');
-    },false);
-
-    // Also, we can change the default behaviour of event by doing e.preventDefault(); like clicking youtube url but it doesn't open instead it prints not available in console.
+    }, false);
 </script>
+
 </html>
 
 <!-- In order to remove the event using id.removeEventListener('click',funRef)
@@ -112,5 +122,15 @@
 
      By default, the addEventListener has bubbling phase which means if we have added some properties into at-target element, then it will be automatically added to parent element also associated with it (which is the third argument that is called useCapture and it is false by-default)
 
-     We can use event.preventDefault() to avoid the defualt behavior of the element like redirecting to a website etc
+     We can also use event.preventDefault() to avoid the defualt behavior of the element like redirecting to a website etc
 -->
+
+
+<!-- 
+    Event Delegation — instead of adding listener to each button separately,
+    add ONE listener to parent and use e.target to identify which child was clicked
+    more performant for many elements!
+ -->
+
+ <!-- stopPropagation — stops travelling to parent elements. 
+      stopImmediatePropagation — stops travelling to other listeners on same element AND parent elements. -->

@@ -67,14 +67,16 @@ promise3.then((G)=>{
 }).then((name)=>{
     console.log(name);
 }).catch((error)=>{
-    console.log("ERROR: Something went wrong");
+    console.log(error);  // ✅ logging actual error message
 }).finally(function(){
     console.log("Finally, promise is either resolved or rejected");
 })
 
 
-
-
+// Promise Chaining rules:
+// .then() returns a NEW promise — that's why chaining works!
+// if .then() throws error, it skips remaining .then() and goes to .catch()
+// .catch() only catches errors from ABOVE it in the chain, not below
 
 
 
@@ -109,10 +111,40 @@ consumePromise4();
 
 
 
-
-
 //  Promises have 3 states
 
-// 1. Pending – Initial state; neither fulfilled nor rejected.
-// 2. Fulfilled – The operation completed successfully.
-// 3. Rejected – The operation failed.
+// 1. Pending   — Initial state; neither fulfilled nor rejected.
+// 2. Fulfilled — The operation completed successfully.
+// 3. Rejected  — The operation failed.
+
+
+
+
+/********************************************** Promise Methods **********************************************/
+
+// Promise.all([p1, p2, p3])
+// — waits for ALL promises to fulfill
+// — if ANY promise rejects, immediately rejects with that error
+// — use when all results are needed and any failure should stop everything
+
+// Promise.allSettled([p1, p2, p3])
+// — waits for ALL promises to settle (fulfill or reject)
+// — gives result of each promise regardless of success or failure
+// — use when you want all results even if some fail
+
+// Promise.race([p1, p2, p3])
+// — resolves or rejects with the FIRST settled promise (fastest one wins)
+// — use for timeout patterns or taking fastest response
+
+// Promise.any([p1, p2, p3])
+// — resolves with FIRST fulfilled promise
+// — only rejects if ALL promises fail (AggregateError)
+// — use when you need at least one success
+
+// Quick comparison:
+// | Method          | Resolves when        | Rejects when        |
+// |-----------------|----------------------|---------------------|
+// | Promise.all     | ALL fulfill          | ANY rejects         |
+// | Promise.allSettled | ALL settle        | Never rejects       |
+// | Promise.race    | FIRST settles        | FIRST rejects       |
+// | Promise.any     | FIRST fulfills       | ALL reject          |
