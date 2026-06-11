@@ -142,9 +142,9 @@ consumePromise4();
 // — use when you need at least one success
 
 // Quick comparison:
-// | Method          | Resolves when        | Rejects when        |
-// |-----------------|----------------------|---------------------|
-// | Promise.all     | ALL fulfill          | ANY rejects         |
-// | Promise.allSettled | ALL settle        | Never rejects       |
-// | Promise.race    | FIRST settles        | FIRST rejects       |
-// | Promise.any     | FIRST fulfills       | ALL reject          |
+// | Method             | Resolves when        | Rejects when        |
+// |--------------------|----------------------|---------------------|
+// | Promise.all        | ALL fulfill          | ANY rejects         |
+// | Promise.allSettled | ALL settle           | Never rejects       |
+// | Promise.race       | FIRST settles        | FIRST rejects       |
+// | Promise.any        | FIRST fulfills       | ALL reject          |
