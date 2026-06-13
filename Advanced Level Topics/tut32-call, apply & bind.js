@@ -73,3 +73,22 @@ printMyName();
 // Arrow functions are useless with call, apply or bind methods and we get undefined.
 
 // We use these 3 methods in order to prevent the loss of 'this' context.
+
+
+
+
+
+
+
+// Constructor Borrowing using call() — OOP use case
+function Animal(name){
+    this.name = name
+}
+function Dog(name, breed){
+    Animal.call(this, name)  // borrowing Animal's constructor to set 'name'
+    this.breed = breed
+}
+
+const dog1 = new Dog("Bruno", "Labrador")
+console.log(dog1.name)   // "Bruno"  ✅ inherited from Animal via call()
+console.log(dog1.breed)  // "Labrador" ✅ Dog's own property
